@@ -11,6 +11,10 @@ app.use(express.json());
 
 app.use('/banner' , bannerRoute);
 
+app.get('/' , async(req, res) => {
+  res.status(200).json("Message" , "server running succefully");
+})
+
 const PORT = dotenv.parsed.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server runing on port ${PORT}`);
