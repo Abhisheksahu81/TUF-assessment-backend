@@ -1,13 +1,13 @@
 import { bannerRoute } from "./route/bannerRoute.js";
 import { connectDb } from "./utils/utils.js";
 import express from 'express'
-import { configDotenv } from "dotenv";
-
-const dotenv = configDotenv();
+import cors from 'cors'
 
 // connectDb();
 const app = express();
+
 app.use(express.json());
+app.use(cors());
 
 app.use('/banner' , bannerRoute);
 
