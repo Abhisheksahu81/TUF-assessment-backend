@@ -9,6 +9,7 @@ const sequelize = new Sequelize( dotenv.parsed.DB_NAME,dotenv.parsed.DB_USER, do
     dialect: 'mysql'
 });
 
+
 const Banner = sequelize.define('Banner', {
     id : {
         primaryKey : true,
