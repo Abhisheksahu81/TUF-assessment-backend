@@ -12,7 +12,7 @@ app.use(express.json());
 app.use('/banner' , bannerRoute);
 
 app.get('/' , async(req, res) => {
-  res.status(200).json("Message" , "server running succefully");
+  res.send({"Message" : "Running Succesfully"});
 })
 
 const PORT = dotenv.parsed.PORT || 5000;
