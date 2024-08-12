@@ -3,14 +3,13 @@ import Banner from "../model/banner.js";
 export const update_banner = async (req , res) => {
     try {
         const { visibility, heading, description, time, url } = req.body;
-        let newtime = new Date().toISOString(); 
-        console.log(req.body);
+
         const newRecord = await Banner.upsert({
             id : 1,
             visibility,
             heading,
             description,
-            time : newtime,
+            time,
             url
         });
 
