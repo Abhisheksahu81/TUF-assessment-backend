@@ -1,11 +1,11 @@
 import { Sequelize , DataTypes } from "sequelize";
-import { configDotenv } from "dotenv";
+// import { configDotenv } from "dotenv";
 
-const dotenv = configDotenv();
+// const dotenv = configDotenv();
 
-const sequelize = new Sequelize( dotenv.parsed.DB_NAME,dotenv.parsed.DB_USER, dotenv.parsed.DB_PASSWORD, {
-    host: dotenv.parsed.DB_HOST,
-    port : dotenv.parsed.DB_PORT,
+const sequelize = new Sequelize( process.env.DB_NAME,process.env.DB_USER, process.env.DB_PASSWORD, {
+    host: process.env.DB_HOST,
+    port : process.env.DB_PORT,
     dialect: 'mysql'
 });
 
