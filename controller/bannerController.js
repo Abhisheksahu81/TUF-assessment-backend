@@ -25,7 +25,12 @@ export const get_banner = async(req,res) => {
     try {
         
         const record = await Banner.findByPk(1);
-        res.status(200).json(record);
+        if(record.visibility==false){
+            res.status(200).json({"error" : "Banner's visibility is off."});
+        }
+        else {
+            res.status(200).json(record);
+        }
     } catch (error) {
         console.error('Error retrieving record:', error);
         res.status(500).json({ error: 'An error occurred while retrieving record.' });
