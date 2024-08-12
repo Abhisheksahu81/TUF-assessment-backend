@@ -5,7 +5,7 @@ import { configDotenv } from "dotenv";
 
 const dotenv = configDotenv();
 
-// connectDb();
+connectDb();
 const app = express();
 app.use(express.json());
 

@@ -9,7 +9,9 @@ export const connectDb = () => {
         password : dotenv.parsed.DB_PASSWORD,
         database : dotenv.parsed.DB_NAME,
         user : dotenv.parsed.DB_USER,
-        host : dotenv.parsed.DB_HOST
+        host : dotenv.parsed.DB_HOST,
+        waitForConnections : true,
+        
     })
 
     connection.connect((err)=>{

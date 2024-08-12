@@ -5,6 +5,7 @@ const dotenv = configDotenv();
 
 const sequelize = new Sequelize( dotenv.parsed.DB_NAME,dotenv.parsed.DB_USER, dotenv.parsed.DB_PASSWORD, {
     host: dotenv.parsed.DB_HOST,
+    port : dotenv.parsed.DB_PORT,
     dialect: 'mysql'
 });
 
